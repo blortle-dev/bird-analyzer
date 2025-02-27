@@ -96,7 +96,7 @@ function App() {
                         <p>Transect length (km): </p>
                         <input type="number" min="0.8" max="1.2" defaultValue={transectLength} className="transectLength" step="0.05" />
                     </div>
-                    <p className="faded">Made with ❤️ by Colin DiCarlo, and open source on GitHub.</p>
+                    <p className="faded">Made with ❤️ by Colin DiCarlo, and open source on <a href="https://github.com/blortle-dev/bird-analyzer">GitHub</a>.</p>
 
                 </div>
             </div>
