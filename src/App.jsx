@@ -1,4 +1,5 @@
 import './App.css'
+import { motion } from "motion/react"
 
 let potentialYap = ["Is that a Golden-Cheeked Warbler?", "We ❤️ Planet Earth.", "Mr. Walker called. Said you messed up.", "How many Northern Cardinals were there?", "Gus Fruh? Daring today, aren't we?", "Find any Mallards?", "You double-counted there, bud.", "Did you fake your data? It's OK, I'm just a description. I can't stop you.", "Is this.. good data? Impossible!", "See any dogs on your transect?", "Did you walk too fast again? :(", "Sponsored by Golden Cheeked Warbler & Co", "One time, I found a Black Capped Vireo at the bottom of the creek. Where it belongs.", "Canyon Wrens are pretty rare.", "The Merlin app is pretty dang useful.", "Feer, feer, fergy fergy fergy fergy!"]
 let transectLength = getCookie("transectLength") || 1
@@ -6,7 +7,7 @@ let transectLength = getCookie("transectLength") || 1
 function App() {
     return (
         <>
-            <div>
+            <motion.div initial={{filter: "blur(15px)", opacity: 0}} whileInView={{filter: "blur(0px)", opacity: 1}}>
                 <div className="Table">
                     <div className="VStack">
                         <div className="HStack">
@@ -81,7 +82,7 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <button className="BigBlueButton" onClick={analyze}>Analyze</button>
+                <motion.button whileHover={{ opacity: 0.75 }} className="BigBlueButton" onClick={analyze}>Analyze</motion.button>
                 <div className="Output">
                     <p className="Yap"><i>Press the Analyze button to generate an output. Remember to set your transect length at the bottom!</i></p>
                     <div className="Divider" />
@@ -92,14 +93,15 @@ function App() {
                     <p id="cd"><b>Coefficient of Detectability (CD): </b></p>
                     <div className="Divider" />
                     <h2>Transect Info</h2>
-                    <div>
-                        <p>Transect length (km): </p>
-                        <input type="number" min="0.8" max="1.2" defaultValue={transectLength} className="transectLength" step="0.05" />
+                    <div className="HStackNoFill" id="HasSpacing">
+                        <div>
+                            <p>Transect length (km): </p>
+                            <input type="number" min="0.8" max="1.2" defaultValue={transectLength} className="transectLength" step="0.05" />
+                        </div>
                     </div>
-                    <p className="faded">Made with ❤️ by Colin DiCarlo, and open source on <a href="https://github.com/blortle-dev/bird-analyzer">GitHub</a>.</p>
-
+                    <p className="faded">Made with ❤️ by Colin DiCarlo, and open source on <motion.a whileHover={{ fontWeight: 700 }} href="https://github.com/blortle-dev/bird-analyzer">GitHub</motion.a>.</p>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }
