@@ -95,10 +95,10 @@ function App() {
                     <div className="Divider" />
                     <h2>Transect Info</h2>
                     <div>
-                        <p>Transect length (km):</p>
+                        <p>Transect length (km): </p>
                         <input type="number" min="0.8" max="1.2" defaultValue={transectLength} className="transectLength" step="0.05" />
                     </div>
-                    <p className="faded">Made with ❤️ by Colin DiCarlo, and open source on GitHub. Copyright (c) Colin DiCarlo 2025</p>
+                    <p className="faded">Made with ❤️ by Colin DiCarlo, and open source on GitHub.</p>
 
                 </div>
             </div>
@@ -206,7 +206,7 @@ function findCD() {
         const coefficientOfDetectability = sumAllDetections / populationEstimateWithoutArea;
 
         return coefficientOfDetectability.toFixed(2);
-    } catch (error) {
+    } catch {
         return "0.00";
     }
 }
