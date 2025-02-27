@@ -1,8 +1,7 @@
-# React + Vite
+# Bird Analysis Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This tool allows for simple and efficient bird data analysis.
+Built in React + Vite, hosted on Vercel at [https://birdtool.vercel.app]
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Coming soon:
+- Option to input data directly into the bottom total row.
