@@ -1,5 +1,6 @@
 import './App.css'
 import { motion } from "motion/react"
+import { Analytics } from "@vercel/analytics/next"
 
 let potentialYap = ["Is that a Golden-Cheeked Warbler?", "We ❤️ Planet Earth.", "Mr. Walker called. Said you messed up.", "How many Northern Cardinals were there?", "Gus Fruh? Daring today, aren't we?", "Find any Mallards?", "You double-counted there, bud.", "Did you fake your data? It's OK, I'm just a description. I can't stop you.", "Is this.. good data? Impossible!", "See any dogs on your transect?", "Did you walk too fast again? :(", "Sponsored by Golden Cheeked Warbler & Co", "One time, I found a Black Capped Vireo at the bottom of the creek. Where it belongs.", "Canyon Wrens are pretty rare.", "The Merlin app is pretty dang useful.", "Feer, feer, fergy fergy fergy fergy!"]
 let transectLength = getCookie("transectLength") || 1
@@ -7,6 +8,7 @@ let transectLength = getCookie("transectLength") || 1
 function App() {
     return (
         <>
+            <Analytics />
             <motion.div initial={{filter: "blur(15px)", opacity: 0}} whileInView={{filter: "blur(0px)", opacity: 1}}>
                 <div className="Table">
                     <div className="VStack">
